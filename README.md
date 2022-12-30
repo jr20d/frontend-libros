@@ -1,4 +1,11 @@
-# BibliotecaFrontend
+# Frontend básico para registro de libros
+
+## Herramientas utilizadas
+* Angular 13
+* Angular Material
+* Consumo de API
+* Configuración de variables de entorno para NGINX
+* Creación de imagen docker de la aplicación 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
