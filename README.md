@@ -5,7 +5,10 @@
 * Angular Material
 * Consumo de API
 * Configuración de variables de entorno para NGINX
-* Creación de imagen docker de la aplicación (archivo de manifiesto dockerfile) 
+* Creación de imagen docker de la aplicación (archivo de manifiesto dockerfile)
+
+> Repositorio del backend -> https://github.com/jr20d/backend-libros
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
