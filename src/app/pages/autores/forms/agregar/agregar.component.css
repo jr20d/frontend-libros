@@ -1,0 +1,9 @@
+.formField{
+  width: 100%;
+  min-width: 300px;
+}
+
+.boton-plus{
+  display: block;
+  text-align: center;
+}

@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url_base_libros_service: 'http://localhost:8090'
 };
 
 /*

@@ -1,0 +1,18 @@
+<div class="container">
+  <comp-header>
+    <button id="iconoMenu" mat-icon-button style="color: #fff;" (click)="template.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </comp-header>
+  <mat-drawer-container class="container-content" [hasBackdrop]="false">
+    <mat-drawer class="side-bar-color" #template [mode]="'side'">
+      <comp-side-bar></comp-side-bar>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="container-view">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  <comp-footer></comp-footer>
+</div>

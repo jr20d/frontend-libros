@@ -1,0 +1,54 @@
+.vista{
+  padding: 20px 25px;
+}
+
+.vista-header{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.vista-header-titulo{
+  display: flex;
+  flex-direction: row;
+}
+
+.vista-header-titulo > h1, mat-icon{
+  color: rgb(81, 60, 139);
+  font-size: 30px;
+  padding: 0 5px;
+}
+
+.boton-agregar{
+  display:block;
+  float: right;
+  padding: auto 0;
+}
+
+.boton{
+  min-width: 150px;
+}
+
+.table-header{
+  text-align: center;
+}
+
+/*
+  Table styles
+*/
+.demo-table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}

@@ -1,0 +1,57 @@
+<h2 mat-dialog-title>Editar libro</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="formulario">
+    <mat-form-field class="formField" appearance="fill">
+      <mat-label>Titulo</mat-label>
+      <input matInput formControlName="nombreLibro" [(ngModel)]="registroApi.nombreLibro">
+    </mat-form-field>
+    <mat-form-field class="formField" appearance="fill">
+      <mat-label>Fecha de publicación</mat-label>
+      <input matInput [matDatepicker]="fecha" placeholder="DD/MM/YYYY" [max]="fechaActual" formControlName="fechaPublicacion"
+      [(ngModel)]="registroApi.fechaPublicacion">
+      <mat-datepicker-toggle matSuffix [for]="fecha"></mat-datepicker-toggle>
+      <mat-datepicker #fecha></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="formField" appearance="fill">
+      <mat-label>Cantidad</mat-label>
+      <input matInput type="number" min="0" value="0" formControlName="cantidad" [(ngModel)]="registroApi.cantidad">
+    </mat-form-field>
+  </form>
+
+  <h3 style="width: 100%; text-align: center; padding-bottom: 7px; border-bottom: 2px solid rgb(135, 126, 126);">
+    Agregar autor(es)
+  </h3>
+
+  <mat-form-field class="formField" appearance="fill">
+    <mat-label>Seleccionar autor</mat-label>
+    <mat-chip-list #chipList aria-label="Seleccionar autor">
+      <mat-chip
+        *ngFor="let autor of autores"
+        (removed)="remove(autor)">
+        {{autor.nombreAutor}}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input
+        placeholder="Agregar autor..."
+        #autorInput
+        [formControl]="autorCtrl"
+        [matAutocomplete]="auto"
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        (matChipInputTokenEnd)="add($event)"
+        (keyup)="cargarAutores(autorInput.value)">
+    </mat-chip-list>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+      <mat-option *ngFor="let autor of listadoAutores" [value]="autor">
+        {{autor.nombreAutor}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button (click)="guardar()" mat-button color="primary" cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>

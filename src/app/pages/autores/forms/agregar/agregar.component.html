@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Agregar autor</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="formulario">
+    <mat-form-field class="formField" appearance="fill">
+      <mat-label>Nombre del autor</mat-label>
+      <input matInput formControlName="nombreAutor">
+    </mat-form-field>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button color="primary" (click)="guardar()" cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>

@@ -1,0 +1,59 @@
+<div class="vista">
+  <div class="vista-header">
+    <div class="vista-header-titulo">
+      <mat-icon>books</mat-icon>
+      <h1>Libros</h1>
+    </div>
+    <button mat-stroked-button color="primary" class="boton-agregar boton" (click)="openDialog()">Agregar libro</button>
+  </div>
+  <mat-form-field style="width: 100%; min-width: 350px;" appearance="fill">
+    <mat-label>Buscar</mat-label>
+    <input #buscarAutor (keyup)="buscarLibros(buscarAutor.value)" matInput placeholder="Buscar...">
+  </mat-form-field>
+  <table style="width: 100%; min-width: 350px; overflow: auto;" mat-table [dataSource]="librosTable" class="mat-elevation-z8 demo-table">
+    <!-- Columna nombre del libro (titulo) -->
+    <ng-container matColumnDef="nombreLibro">
+      <th class="table-header" mat-header-cell *matHeaderCellDef>Titulo</th>
+      <td class="table-header" mat-cell *matCellDef="let element">{{element.nombreLibro}}</td>
+    </ng-container>
+
+    <!-- Columna fecha de publicación -->
+    <ng-container matColumnDef="fechaPublicacion">
+      <th class="table-header" mat-header-cell *matHeaderCellDef>Fecha publicación</th>
+      <td class="table-header" mat-cell *matCellDef="let element">{{element.fechaPublicacion | date}}</td>
+    </ng-container>
+
+    <!-- Columna cantidad de libros -->
+    <ng-container matColumnDef="cantidad">
+      <th class="table-header" mat-header-cell *matHeaderCellDef>Cantidad</th>
+      <td class="table-header" mat-cell *matCellDef="let element">{{element.cantidad}}</td>
+    </ng-container>
+
+    <!-- Columna de opciones -->
+    <ng-container matColumnDef="opciones">
+      <th class="table-header" mat-header-cell *matHeaderCellDef>Opciones</th>
+      <td class="table-header" mat-cell *matCellDef="let element">
+        <button mat-stroked-button [matMenuTriggerFor]="menu">Opción</button>
+        <mat-menu #menu="matMenu">
+          <button (click)="actualizar(element.libroId)" style="color: black; font-size: 15px;" mat-menu-item><mat-icon style="color: black; font-size: 15px;">border_color</mat-icon>Editar</button>
+          <button (click)="eliminar(element.libroId)" style="color: black; font-size: 15px;" mat-menu-item><mat-icon style="color: black; font-size: 15px;">delete</mat-icon>Eliminar</button>
+        </mat-menu>
+
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+    <tr
+        mat-row
+        (click)="clickedRows.add(row)"
+        [class.demo-row-is-clicked]="clickedRows.has(row)"
+        *matRowDef="let row; columns: columnas;"
+    ></tr>
+  </table>
+  <mat-paginator style="width: 100%; min-width: 350px;" [length]="totalRegistros"
+    [pageSizeOptions]="[10, 25, 40]"
+    aria-label="Seleccionar página"
+    showFirstLastButtons="true"
+    (page)="cambiarPagina($event)">
+  </mat-paginator>
+</div>

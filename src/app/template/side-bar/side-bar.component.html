@@ -1,0 +1,27 @@
+<div class="side-bar">
+  <h1>Biblioteca</h1>
+  <hr>
+  <ul class="side-bar-menu">
+    <!--<li class="side-bar-menu-item">
+      <a href="">Dashboard</a>
+    </li>-->
+    <li class="side-bar-menu-item">
+      <mat-icon [routerLink]="['/libros']" routerLinkActive="activo"
+       class="no-active"
+       [class.no-active-settings-outline]="!libros.isActive">book</mat-icon>
+      <a [routerLink]="['/libros']" routerLinkActive="activo"
+      #libros="routerLinkActive"
+       class="no-active"
+       [class.no-active-settings-outline]="!libros.isActive">Libros</a>
+    </li>
+    <li class="side-bar-menu-item">
+      <mat-icon [routerLink]="['/autores']" routerLinkActive="activo"
+       class="no-active"
+       [class.no-active-settings-outline]="!autores.isActive">group</mat-icon>
+      <a [routerLink]="['/autores']" routerLinkActive="activo"
+      #autores="routerLinkActive"
+       class="no-active"
+       [class.no-active-settings-outline]="!autores.isActive">Autores</a>
+    </li>
+  </ul>
+</div>

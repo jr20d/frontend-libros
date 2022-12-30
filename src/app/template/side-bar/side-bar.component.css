@@ -1,0 +1,35 @@
+.side-bar{
+  padding: 15px 5px;
+  overflow: auto;
+  color: #fff;
+}
+
+.side-bar-menu{
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-bar-menu-item{
+  width: 100%;
+  padding: 15px 0;
+  margin: 0;
+  text-align: center;
+  font-size: 17px;
+  color: #fff;
+}
+
+.no-active{
+  color: rgb(155, 155, 215);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.activo{
+  color: #fff;
+  font-size: 17px;
+}

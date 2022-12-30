@@ -1,0 +1,16 @@
+<div class="header">
+  <ul class="nav">
+    <li>
+      <ng-content #iconoMenu></ng-content>
+    </li>
+    <li class="nav-item"><a routerLink="/">Dashboard</a></li>
+  </ul>
+  <button style="background-color: rgba(255, 255, 255, 0);" mat-mini-fab class="material-symbols-outlined" [matMenuTriggerFor]="user">
+    <span class="material-icons md-18">person</span>
+  </button>
+</div>
+<mat-menu #user="matMenu">
+  <p mat-menu-item>Nombre Usuario</p>
+  <a mat-menu-item><span class="material-icons md-18" style="font-size: 12px;">settings</span> Ajustes</a>
+  <a mat-menu-item><span class="material-icons md-18" style="font-size: 12px;">logout</span> Cerrar sesión</a>
+</mat-menu>
