@@ -5,7 +5,7 @@
 * Angular Material
 * Consumo de API
 * Configuración de variables de entorno para NGINX
-* Creación de imagen docker de la aplicación 
+* Creación de imagen docker de la aplicación (archivo de manifiesto dockerfile) 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
